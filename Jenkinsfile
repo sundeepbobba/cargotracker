@@ -6,8 +6,10 @@ pipeline {
 stages {    
     stage('Setup') {
       steps {
-        sh "mvn install"
+	 withMaven(maven : 'MVN') {
+		sh "mvn install"
       }
     }
+}
 }
 }
