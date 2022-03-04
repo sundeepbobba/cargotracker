@@ -33,6 +33,11 @@ stage('Package Application') {
                 sh "mvn package"
     }
 }
+stage('Distribute Artifacts') {
+      steps {
+                sh "mvn deploy"
+    }
+}
 
 
 }
