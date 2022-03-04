@@ -18,7 +18,7 @@ stage('Install Dependencies') {
                 sh "mvn dependency:resolve"
     }
 }
-stage('Install Dependencies') {
+stage('Package Application') {
       steps {
                 sh "mvn package"
     }
