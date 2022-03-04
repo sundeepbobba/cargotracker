@@ -1,5 +1,8 @@
 pipeline {
     agent any
+tools {
+        maven "MVN"
+    }
     options {
         skipDefaultCheckout false
     }
