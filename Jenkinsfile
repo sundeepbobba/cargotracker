@@ -8,11 +8,22 @@ tools {
         skipDefaultCheckout false
     }
 stages {    
-    stage('Setup') {
+    stage('Clean-up Cache') {
       steps {
-                sh "java -version"
-		sh "mvn install"
+		sh "mvn clean"
     }
 }
+stage('Install Dependencies') {
+      steps {
+                sh "mvn dependency:resolve"
+    }
+}
+stage('Install Dependencies') {
+      steps {
+                sh "mvn package"
+    }
+}
+
+
 }
 }
