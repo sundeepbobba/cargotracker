@@ -23,7 +23,7 @@ stage('Perform Unit Tests') {
                 sh "mvn test"
     }
 }
-stage('Perform Sonar Analysis) {
+stage('Perform Sonar Analysis') {
       steps {
                 sh "mvn sonar:sonar"
     }
