@@ -9,9 +9,7 @@ tools {
 stages {    
     stage('Setup') {
       steps {
-	 withMaven(maven : 'MVN') {
 		sh "mvn install"
-      }
     }
 }
 }
