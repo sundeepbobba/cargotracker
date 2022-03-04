@@ -11,11 +11,14 @@
     <name>cargo-tracker</name>
     <url>https://github.com/javaee/cargotracker/</url>
 
-
-<properties>
-  <sonar.organization>anotherdevopsguy</sonar.organization>
-  <sonar.host.url>http://54.87.165.225:9000/</sonar.host.url>
-</properties>
+    <properties>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <netbeans.hint.j2eeVersion>1.7</netbeans.hint.j2eeVersion>
+        <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
+        <webapp.databaseTempDir>/tmp</webapp.databaseTempDir>
+        <webapp.graphTraversalUrl>http://localhost:8080/cargo-tracker/rest/graph-traversal/shortest-path</webapp.graphTraversalUrl>
+    </properties>
 
     <!-- We need to use the PrimeFaces repository -->
     <repositories>
@@ -141,6 +144,19 @@
     </build>
 
     <profiles>
+<profile>
+<id>sonar</id>
+<activation>
+<activeByDefault>true</activeByDefault>
+</activation>
+<properties>
+<!-- Optional URL to server. Default value is http://localhost:9000 -->
+<sonar.host.url>
+http://54.87.165.225:9000
+</sonar.host.url>
+</properties>
+</profile>
+
         <!-- GlassFish specific version of build -->
         <profile>
             <id>glassfish</id>
