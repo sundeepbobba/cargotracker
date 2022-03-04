@@ -6,7 +6,7 @@ pipeline {
 stages {    
     stage('Setup') {
       steps {
-        sh "sudo mvn install"
+        sh "mvn install"
       }
     }
 }
