@@ -18,6 +18,11 @@ stage('Install Dependencies') {
                 sh "mvn dependency:resolve"
     }
 }
+stage('Perform Unit Test') {
+      steps {
+                sh "mvn test"
+    }
+}
 stage('Package Application') {
       steps {
                 sh "mvn package"
