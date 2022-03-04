@@ -18,9 +18,14 @@ stage('Install Dependencies') {
                 sh "mvn dependency:resolve"
     }
 }
-stage('Perform Unit Test') {
+stage('Perform Unit Tests) {
       steps {
                 sh "mvn test"
+    }
+}
+stage('Perform Sonar Analysis) {
+      steps {
+                sh "mvn sonar:sonar"
     }
 }
 stage('Package Application') {
